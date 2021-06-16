@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code with Harry </title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.js">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="pc.png" alt="Logo"><span class="active">Harry Army</span>
+        </div>
+        <ul class="inline">
+            <li><a href="">Home</a></li>
+            <div class="dropdown">
+                <li class="dropbtn"><a href="">Courses</a></li>
+                <div class="dropdown-content">
+                    <a href="#">Web Development</a>
+                    <a href="#"> Python </a>
+                    <a href="#">C/C++ Programming</a>
+                </div>
+            </div>
+            <li><a href="">Coding</a></li>
+            <li><a href="">Contact us</a></li>
+        </ul>
+    </nav>
+    <section class="header">
+        <div class="slideshow-container">
+
+            <div class="mySlides fade pop">
+              <img src="coding2.svg" >
+              <div class="text sleep">Eat </div>
+            </div>
+            
+            <div class="mySlides fade">
+              <img src="coding1.svg">
+              <div class="text">Hustle</div>
+            </div>
+            
+            <div class="mySlides fade">
+              <img src="Background.svg">
+              <div class="text">Sleep</div>
+            </div>
+            
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            
+            </div>
+            <br>
+            
+            <div style="text-align:center">
+              <span class="dot" onclick="currentSlide(1)"></span> 
+              <span class="dot" onclick="currentSlide(2)"></span> 
+              <span class="dot" onclick="currentSlide(3)"></span> 
+            </div>
+    </section> 
+    <br>
+    <section id="service container">
+        <h1 class="h-primary center"> Coding <img src="coding.png" alt="Code" height="60px"></h1> 
+        <div class="grid">
+            <div class="box">
+                <h3 class="h-top"> C Programming </h3>
+                <div class="video1">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/7Dh73z3icd8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+
+    </section>
+</body>
+<script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+    
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+    }
+    </script>
+</html>
